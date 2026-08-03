@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freelance Directory — One Freelancer, Many Disciplines</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#161C2E;
+    --paper:#F3EFE6;
+    --gold:#C9982B;
+    --teal:#2F6B66;
+    --coral:#B3532C;
+    --line: rgba(22,28,46,0.14);
+    --line-light: rgba(243,239,230,0.18);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:var(--ink);
+    color:var(--paper);
+    padding:5rem 1.5rem 4rem;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+      linear-gradient(var(--line-light) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-light) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity:0.35;
+    mask-image: radial-gradient(ellipse at top left, black, transparent 70%);
+  }
+  .hero-inner{
+    max-width:760px;
+    margin:0 auto;
+    position:relative;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--gold);
+    display:flex;
+    align-items:center;
+    gap:0.6rem;
+    margin-bottom:1.6rem;
+  }
+  .eyebrow::before{
+    content:"";
+    width:8px;height:8px;
+    background:var(--gold);
+    border-radius:50%;
+    display:inline-block;
+  }
+  .headword{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(2.6rem, 8vw, 4.6rem);
+    line-height:1.02;
+    margin:0 0 0.5rem;
+    letter-spacing:-0.01em;
+  }
+  .headword em{
+    font-style:italic;
+    font-weight:500;
+    color:var(--gold);
+  }
+  .pronunciation{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:1rem;
+    color:rgba(243,239,230,0.55);
+    margin:0 0 2rem;
+  }
+  .pos{
+    font-style:italic;
+    color:rgba(243,239,230,0.75);
+  }
+  .definition{
+    font-size:1.15rem;
+    line-height:1.65;
+    max-width:52ch;
+    color:rgba(243,239,230,0.9);
+    margin:0 0 2.5rem;
+  }
+  .definition strong{color:var(--paper); font-weight:600;}
+
+  .lang-strip{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.6rem 1rem;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    color:rgba(243,239,230,0.6);
+    border-top:1px solid var(--line-light);
+    padding-top:1.4rem;
+  }
+  .lang-strip span{white-space:nowrap;}
+  .lang-strip b{color:var(--gold); font-weight:500;}
+
+  /* ---------- NAV / INDEX ---------- */
+  .index-bar{
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:10;
+    backdrop-filter: blur(6px);
+    background:rgba(243,239,230,0.92);
+  }
+  .index-bar-inner{
+    max-width:900px;
+    margin:0 auto;
+    padding:0.9rem 1.5rem;
+    display:flex;
+    gap:1.6rem;
+    overflow-x:auto;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+  }
+  .index-bar-inner a{
+    text-decoration:none;
+    color:rgba(22,28,46,0.55);
+    white-space:nowrap;
+    padding-bottom:0.3rem;
+    border-bottom:2px solid transparent;
+    transition:color 0.15s ease, border-color 0.15s ease;
+  }
+  .index-bar-inner a:hover{
+    color:var(--ink);
+    border-color:var(--gold);
+  }
+
+  /* ---------- ENTRIES ---------- */
+  .entries{
+    max-width:900px;
+    margin:0 auto;
+    padding:3rem 1.5rem 1rem;
+  }
+  .entry{
+    display:grid;
+    grid-template-columns:180px 1fr;
+    gap:2rem;
+    padding:2.6rem 0;
+    border-bottom:1px solid var(--line);
+  }
+  .entry:first-child{padding-top:0.5rem;}
+  .entry-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--teal);
+    padding-top:0.3rem;
+  }
+  .entry-tag .dot{color:var(--coral);}
+  .entry-head{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.6rem;
+    margin:0 0 0.9rem;
+    color:var(--ink);
+  }
+  .entry-services{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.5rem 0.7rem;
+    margin:0;
+    padding:0;
+    list-style:none;
+  }
+  .entry-services li{
+    font-size:0.95rem;
+    line-height:1.5;
+    background:rgba(22,28,46,0.05);
+    border:1px solid var(--line);
+    padding:0.35rem 0.8rem;
+    border-radius:100px;
+  }
+
+  @media (max-width:620px){
+    .entry{grid-template-columns:1fr; gap:0.8rem;}
+  }
+
+  /* ---------- FOOTER / CONTACT ---------- */
+  .contact{
+    background:var(--ink);
+    color:var(--paper);
+    padding:4rem 1.5rem 3rem;
+    margin-top:2rem;
+  }
+  .contact-inner{
+    max-width:760px;
+    margin:0 auto;
+  }
+  .contact-head{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-style:italic;
+    font-size:clamp(1.8rem, 5vw, 2.6rem);
+    margin:0 0 1rem;
+  }
+  .contact-sub{
+    color:rgba(243,239,230,0.7);
+    max-width:48ch;
+    line-height:1.6;
+    margin:0 0 2.4rem;
+  }
+  .contact-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
+    gap:1.4rem;
+    margin-bottom:2.4rem;
+  }
+  .contact-card{
+    border:1px solid var(--line-light);
+    padding:1.2rem 1.3rem;
+    border-radius:4px;
+  }
+  .contact-card .label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.68rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--gold);
+    display:block;
+    margin-bottom:0.5rem;
+  }
+  .contact-card .value{
+    font-size:1rem;
+    color:var(--paper);
+  }
+  .tagline-final{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.8rem;
+    color:rgba(243,239,230,0.45);
+    border-top:1px solid var(--line-light);
+    padding-top:1.6rem;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Freelance Directory</div>
+    <h1 class="headword">free·lanc·er <em>/ˈfriːˌlænsər/</em></h1>
+    <p class="pronunciation"><span class="pos">noun.</span> one professional, five disciplines, zero limits.</p>
+    <p class="definition">
+      I build the software, write the research, run the numbers, and translate the words —
+      so you don't need five different people to get one project done.
+      <strong>Every engagement is scoped to what you actually need.</strong>
+    </p>
+    <div class="lang-strip">
+      <span><b>EN</b> ⇄ <b>SW</b> translation & voice-over</span>
+      <span><b>10+</b> service lines</span>
+      <span><b>1</b> point of contact</span>
+    </div>
+  </div>
+</header>
+
+<nav class="index-bar">
+  <div class="index-bar-inner">
+    <a href="#tech">Tech & Data</a>
+    <a href="#words">Research & Writing</a>
+    <a href="#biz">Business & Ops</a>
+    <a href="#make">Design & Growth</a>
+    <a href="#lingua">Language & AI</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<main class="entries">
+
+  <section class="entry" id="tech">
+    <div class="entry-tag"><span class="dot">●</span> tech &amp; data</div>
+    <div>
+      <h2 class="entry-head">Build &amp; automate it</h2>
+      <ul class="entry-services">
+        <li>Mobile app development</li>
+        <li>Web app development</li>
+        <li>Business process automation</li>
+        <li>Git &amp; GitHub deployment</li>
+        <li>Database design &amp; development</li>
+        <li>Web scraping</li>
+        <li>Data mining</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="entry" id="words">
+    <div class="entry-tag"><span class="dot">●</span> research &amp; writing</div>
+    <div>
+      <h2 class="entry-head">Write &amp; document it</h2>
+      <ul class="entry-services">
+        <li>Scientific &amp; research writing</li>
+        <li>STEM, humanities &amp; social sciences research</li>
+        <li>Technical writing &amp; documentation</li>
+        <li>Proofreading &amp; editing</li>
+        <li>Paraphrasing &amp; formatting</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="entry" id="biz">
+    <div class="entry-tag"><span class="dot">●</span> business &amp; ops</div>
+    <div>
+      <h2 class="entry-head">Run &amp; manage it</h2>
+      <ul class="entry-services">
+        <li>Finance &amp; business analysis</li>
+        <li>Organizational behaviour consulting</li>
+        <li>HR support</li>
+        <li>Logistics &amp; project management</li>
+        <li>Online booking systems</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="entry" id="make">
+    <div class="entry-tag"><span class="dot">●</span> design &amp; growth</div>
+    <div>
+      <h2 class="entry-head">Design &amp; grow it</h2>
+      <ul class="entry-services">
+        <li>Graphic design</li>
+        <li>Architectural drawings</li>
+        <li>SEO</li>
+        <li>Pinterest automation</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="entry" id="lingua">
+    <div class="entry-tag"><span class="dot">●</span> language &amp; ai</div>
+    <div>
+      <h2 class="entry-head">Translate &amp; train it</h2>
+      <ul class="entry-services">
+        <li>English ⇄ Swahili translation</li>
+        <li>English &amp; Swahili voice-overs</li>
+        <li>AI tutoring</li>
+        <li>Data annotation &amp; labelling</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="contact" id="contact">
+  <div class="contact-inner">
+    <h2 class="contact-head">Tell me what you're building.</h2>
+    <p class="contact-sub">Every service above can stand alone or combine into one project — send a brief and I'll scope it plainly, no jargon.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <span class="label">Email</span>
+        <span class="value">your.email@example.com</span>
+      </div>
+      <div class="contact-card">
+        <span class="label">WhatsApp / Phone</span>
+        <span class="value">+254 7XX XXX XXX</span>
+      </div>
+      <div class="contact-card">
+        <span class="label">Portfolio / LinkedIn</span>
+        <span class="value">yourportfolio.com</span>
+      </div>
+    </div>
+    <p class="tagline-final">Scanned from a QR code, printed on a card, or shared as a link — same freelancer, same standard.</p>
+  </div>
+</footer>
+
+</body>
+</html>
