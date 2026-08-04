@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kelvin230.github.io/Freelance-Portfolio/sitemap.xml

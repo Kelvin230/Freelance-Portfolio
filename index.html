@@ -1,9 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CK6564BTV3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CK6564BTV3');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Freelance Directory — One Freelancer, Many Disciplines</title>
+
+<!-- Primary SEO -->
+<title>Kelvin Kiago | Freelance Solutions, Scientific Research, Data Analyst & EN-SW Translator</title>
+<meta name="description" content="Freelance expert offering web & mobile app development, data analysis (SPSS, R, MATLAB, Excel), AI training & data annotation, English-Swahili translation, localization & voice overs, Excel/Google Sheets automation, scientific research writing, assignment help, and personal virtual assistant services. Tailored solutions for every project.">
+<meta name="keywords" content="freelance developer Kenya, web app development, mobile app developer, data analysis freelancer, SPSS R MATLAB Excel, AI training data annotation, English Swahili translator, localization voice over, Excel Google Sheets automation, scientific research writing, assignment help, personal virtual assistant, business automation, technical writing, SEO, graphic design, GitHub developer, database design, HR logistics project management, architectural drawings freelancer">
+<meta name="author" content="Kelvin Kiago">
+<link rel="canonical" href="https://kelvin230.github.io/Freelance-Portfolio/">
+
+<!-- Open Graph (Facebook, LinkedIn, WhatsApp previews) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kelvin Kiago | Freelance Solutions, Scientific Research, Data Analyst & EN-SW Translator">
+<meta property="og:description" content="App development, data analysis, AI training & data annotation, EN-SW translation & voice overs, Excel/Sheets automation, research writing, assignment help & virtual assistance — tailored to your project.">
+<meta property="og:url" content="https://kelvin230.github.io/Freelance-Portfolio/">
+<meta property="og:site_name" content="Kelvin Kiago — Freelance Directory">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kelvin Kiago | Freelance Solutions, Scientific Research, Data Analyst & EN-SW Translator">
+<meta name="twitter:description" content="App development, data analysis, AI training, EN-SW translation & voice overs, Sheets automation, research writing & virtual assistance — one freelancer, tailored solutions.">
+
+<!-- Robots -->
+<meta name="robots" content="index, follow">
+
+<!-- Structured Data: Person / Professional Service -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Kelvin Kiago",
+  "url": "https://kelvin230.github.io/Freelance-Portfolio/",
+  "email": "mailto:kelvinkiago3@gmail.com",
+  "jobTitle": "Freelance Solutions, Scientific Research, Data Analyst & Translator",
+  "knowsLanguage": ["English", "Swahili"],
+  "sameAs": [
+    "https://www.upwork.com/freelancers/~01414c67ad6d1cebbd"
+  ],
+  "makesOffer": [
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Web & Mobile App Development"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Data Analysis (SPSS, R, MATLAB, Excel)"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"AI Training & Data Annotation"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"English-Swahili Translation, Localization & Voice Overs"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Excel & Google Sheets Automation"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Scientific Research & Technical Writing"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Assignment Help"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Personal Virtual Assistant"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Graphic Design & SEO"}}
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -171,6 +229,18 @@
     text-transform:uppercase;
     color:var(--teal);
     padding-top:0.3rem;
+    display:flex;
+    flex-direction:column;
+    gap:0.7rem;
+  }
+  .entry-icon{
+    width:44px;
+    height:44px;
+  }
+  .entry-icon svg{
+    width:100%;
+    height:100%;
+    display:block;
   }
   .entry-tag .dot{color:var(--coral);}
   .entry-head{
@@ -199,6 +269,8 @@
 
   @media (max-width:620px){
     .entry{grid-template-columns:1fr; gap:0.8rem;}
+    .entry-tag{flex-direction:row; align-items:center; gap:0.8rem;}
+    .entry-icon{width:32px; height:32px; flex-shrink:0;}
   }
 
   /* ---------- FOOTER / CONTACT ---------- */
@@ -226,28 +298,49 @@
     margin:0 0 2.4rem;
   }
   .contact-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
-    gap:1.4rem;
+    display:flex;
+    flex-wrap:wrap;
+    gap:1rem;
     margin-bottom:2.4rem;
   }
-  .contact-card{
+  .contact-btn{
+    display:inline-flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:0.45rem;
     border:1px solid var(--line-light);
-    padding:1.2rem 1.3rem;
+    padding:1rem 1.3rem;
     border-radius:4px;
+    text-decoration:none;
+    width:fit-content;
+    max-width:100%;
+    transition:border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
   }
-  .contact-card .label{
+  .contact-btn:hover{
+    border-color:var(--gold);
+    background:rgba(201,152,43,0.08);
+    transform:translateY(-2px);
+  }
+  .contact-btn .label{
     font-family:'IBM Plex Mono', monospace;
     font-size:0.68rem;
     letter-spacing:0.1em;
     text-transform:uppercase;
     color:var(--gold);
-    display:block;
-    margin-bottom:0.5rem;
+    display:flex;
+    align-items:center;
+    gap:0.4rem;
+    white-space:nowrap;
   }
-  .contact-card .value{
-    font-size:1rem;
+  .contact-btn .value{
+    font-size:0.98rem;
     color:var(--paper);
+    white-space:nowrap;
+  }
+  @media (max-width:620px){
+    .contact-grid{flex-direction:column;}
+    .contact-btn{width:100%;}
+    .contact-btn .value{white-space:normal; word-break:break-word;}
   }
   .tagline-final{
     font-family:'IBM Plex Mono', monospace;
@@ -268,10 +361,9 @@
   <div class="hero-inner">
     <div class="eyebrow">Freelance Directory</div>
     <h1 class="headword">free·lanc·er <em>/ˈfriːˌlænsər/</em></h1>
-    <p class="pronunciation"><span class="pos">noun.</span> one professional, five disciplines, zero limits.</p>
+    <p class="pronunciation"><span class="pos">noun.</span> one professional, multiple disciplines, zero limits.</p>
     <p class="definition">
-      I build the software, write the research, run the numbers, and translate the words —
-      so you don't need five different people to get one project done.
+      Need it built, written, designed, or translated? I do it all. 
       <strong>Every engagement is scoped to what you actually need.</strong>
     </p>
     <div class="lang-strip">
@@ -285,6 +377,7 @@
 <nav class="index-bar">
   <div class="index-bar-inner">
     <a href="#tech">Tech & Data</a>
+    <a href="#analytics">Data Analysis</a>
     <a href="#words">Research & Writing</a>
     <a href="#biz">Business & Ops</a>
     <a href="#make">Design & Growth</a>
@@ -296,7 +389,16 @@
 <main class="entries">
 
   <section class="entry" id="tech">
-    <div class="entry-tag"><span class="dot">●</span> tech &amp; data</div>
+    <div class="entry-tag">
+      <span class="entry-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 14L7 24l10 10"/>
+          <path d="M31 14l10 10-10 10"/>
+          <path d="M27 10l-6 28"/>
+        </svg>
+      </span>
+      <span><span class="dot">●</span> tech &amp; data</span>
+    </div>
     <div>
       <h2 class="entry-head">Build &amp; automate it</h2>
       <ul class="entry-services">
@@ -311,8 +413,45 @@
     </div>
   </section>
 
+  <section class="entry" id="analytics">
+    <div class="entry-tag">
+      <span class="entry-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 39V23"/>
+          <path d="M20 39V13"/>
+          <path d="M31 39V27"/>
+          <path d="M39 39V9"/>
+          <path d="M6 39h36"/>
+        </svg>
+      </span>
+      <span><span class="dot">●</span> data analysis</span>
+    </div>
+    <div>
+      <h2 class="entry-head">Analyze &amp; interpret it</h2>
+      <ul class="entry-services">
+        <li>Data analysis</li>
+        <li>Data cleaning</li>
+        <li>Data mining</li>
+        <li>SPSS</li>
+        <li>MATLAB</li>
+        <li>R</li>
+        <li>Excel automation</li>
+        <li>Google Sheets automation</li>
+      </ul>
+    </div>
+  </section>
+
   <section class="entry" id="words">
-    <div class="entry-tag"><span class="dot">●</span> research &amp; writing</div>
+    <div class="entry-tag">
+      <span class="entry-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="var(--coral)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M35 7c3 0 6 3 6 6-9 14-14 18-22 22l-8 2 2-8c4-8 8-13 22-22z"/>
+          <path d="M28 14l6 6"/>
+          <path d="M8 41h16"/>
+        </svg>
+      </span>
+      <span><span class="dot">●</span> research &amp; writing</span>
+    </div>
     <div>
       <h2 class="entry-head">Write &amp; document it</h2>
       <ul class="entry-services">
@@ -321,12 +460,23 @@
         <li>Technical writing &amp; documentation</li>
         <li>Proofreading &amp; editing</li>
         <li>Paraphrasing &amp; formatting</li>
+        <li>Assignment help</li>
       </ul>
     </div>
   </section>
 
   <section class="entry" id="biz">
-    <div class="entry-tag"><span class="dot">●</span> business &amp; ops</div>
+    <div class="entry-tag">
+      <span class="entry-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="6" y="16" width="36" height="24" rx="3"/>
+          <path d="M17 16v-4a3 3 0 013-3h8a3 3 0 013 3v4"/>
+          <path d="M6 26h36"/>
+          <path d="M21 26v4h6v-4"/>
+        </svg>
+      </span>
+      <span><span class="dot">●</span> business &amp; ops</span>
+    </div>
     <div>
       <h2 class="entry-head">Run &amp; manage it</h2>
       <ul class="entry-services">
@@ -335,12 +485,21 @@
         <li>HR support</li>
         <li>Logistics &amp; project management</li>
         <li>Online booking systems</li>
+        <li>Personal virtual assistant</li>
       </ul>
     </div>
   </section>
 
   <section class="entry" id="make">
-    <div class="entry-tag"><span class="dot">●</span> design &amp; growth</div>
+    <div class="entry-tag">
+      <span class="entry-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="24" cy="24" r="17"/>
+          <path d="M30 18l-4 12-12 4 4-12z"/>
+        </svg>
+      </span>
+      <span><span class="dot">●</span> design &amp; growth</span>
+    </div>
     <div>
       <h2 class="entry-head">Design &amp; grow it</h2>
       <ul class="entry-services">
@@ -353,13 +512,29 @@
   </section>
 
   <section class="entry" id="lingua">
-    <div class="entry-tag"><span class="dot">●</span> language &amp; ai</div>
+    <div class="entry-tag">
+      <span class="entry-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="var(--coral)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="5" y="8" width="24" height="17" rx="3"/>
+          <path d="M11 30l0-5" />
+          <rect x="19" y="23" width="24" height="17" rx="3"/>
+          <path d="M37 40v5"/>
+          <path d="M11 13h12"/>
+          <path d="M15 13c0 5-2 8-6 9"/>
+          <path d="M25 28h12"/>
+          <path d="M29 28c0 5-2 8-6 9"/>
+        </svg>
+      </span>
+      <span><span class="dot">●</span> language &amp; ai</span>
+    </div>
     <div>
       <h2 class="entry-head">Translate &amp; train it</h2>
       <ul class="entry-services">
         <li>English ⇄ Swahili translation</li>
+        <li>Localization</li>
         <li>English &amp; Swahili voice-overs</li>
         <li>AI tutoring</li>
+        <li>AI training</li>
         <li>Data annotation &amp; labelling</li>
       </ul>
     </div>
@@ -372,18 +547,18 @@
     <h2 class="contact-head">Tell me what you're building.</h2>
     <p class="contact-sub">Every service above can stand alone or combine into one project — send a brief and I'll scope it plainly, no jargon.</p>
     <div class="contact-grid">
-      <div class="contact-card">
-        <span class="label">Email</span>
-        <span class="value">your.email@example.com</span>
-      </div>
-      <div class="contact-card">
-        <span class="label">WhatsApp / Phone</span>
-        <span class="value">+254 7XX XXX XXX</span>
-      </div>
-      <div class="contact-card">
-        <span class="label">Portfolio / LinkedIn</span>
-        <span class="value">yourportfolio.com</span>
-      </div>
+      <a class="contact-btn" href="mailto:kelvinkiago3@gmail.com">
+        <span class="label">✉ Email</span>
+        <span class="value">kelvinkiago3@gmail.com</span>
+      </a>
+      <a class="contact-btn" href="https://wa.me/254790453808" target="_blank" rel="noopener">
+        <span class="label">💬 WhatsApp</span>
+        <span class="value">+254 790 453 808</span>
+      </a>
+      <a class="contact-btn" href="https://www.upwork.com/freelancers/~01414c67ad6d1cebbd" target="_blank" rel="noopener">
+        <span class="label">🔗 Upwork</span>
+        <span class="value">View my Upwork profile</span>
+      </a>
     </div>
     <p class="tagline-final">Scanned from a QR code, printed on a card, or shared as a link — same freelancer, same standard.</p>
   </div>
