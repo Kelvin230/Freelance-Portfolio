@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PFXW4P2M9Q"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -180,6 +180,18 @@
     text-transform:uppercase;
     color:var(--teal);
     padding-top:0.3rem;
+    display:flex;
+    flex-direction:column;
+    gap:0.7rem;
+  }
+  .entry-icon{
+    width:44px;
+    height:44px;
+  }
+  .entry-icon svg{
+    width:100%;
+    height:100%;
+    display:block;
   }
   .entry-tag .dot{color:var(--coral);}
   .entry-head{
@@ -208,6 +220,8 @@
 
   @media (max-width:620px){
     .entry{grid-template-columns:1fr; gap:0.8rem;}
+    .entry-tag{flex-direction:row; align-items:center; gap:0.8rem;}
+    .entry-icon{width:32px; height:32px; flex-shrink:0;}
   }
 
   /* ---------- FOOTER / CONTACT ---------- */
@@ -298,7 +312,7 @@
   <div class="hero-inner">
     <div class="eyebrow">Freelance Directory</div>
     <h1 class="headword">free·lanc·er <em>/ˈfriːˌlænsər/</em></h1>
-    <p class="pronunciation"><span class="pos">noun.</span> one professional, multiple disciplines, zero limits.</p>
+    <p class="pronunciation"><span class="pos">noun.</span> one professional, five disciplines, zero limits.</p>
     <p class="definition">
       Need it built, written, designed, or translated? I do it all.
       <strong>Every engagement is scoped to what you actually need.</strong>
@@ -326,7 +340,16 @@
 <main class="entries">
 
   <section class="entry" id="tech">
-    <div class="entry-tag"><span class="dot">●</span> tech &amp; data</div>
+    <div class="entry-tag">
+      <span class="entry-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 14L7 24l10 10"/>
+          <path d="M31 14l10 10-10 10"/>
+          <path d="M27 10l-6 28"/>
+        </svg>
+      </span>
+      <span><span class="dot">●</span> tech &amp; data</span>
+    </div>
     <div>
       <h2 class="entry-head">Build &amp; automate it</h2>
       <ul class="entry-services">
@@ -342,7 +365,18 @@
   </section>
 
   <section class="entry" id="analytics">
-    <div class="entry-tag"><span class="dot">●</span> data analysis</div>
+    <div class="entry-tag">
+      <span class="entry-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 39V23"/>
+          <path d="M20 39V13"/>
+          <path d="M31 39V27"/>
+          <path d="M39 39V9"/>
+          <path d="M6 39h36"/>
+        </svg>
+      </span>
+      <span><span class="dot">●</span> data analysis</span>
+    </div>
     <div>
       <h2 class="entry-head">Analyze &amp; interpret it</h2>
       <ul class="entry-services">
@@ -358,7 +392,16 @@
   </section>
 
   <section class="entry" id="words">
-    <div class="entry-tag"><span class="dot">●</span> research &amp; writing</div>
+    <div class="entry-tag">
+      <span class="entry-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="var(--coral)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M35 7c3 0 6 3 6 6-9 14-14 18-22 22l-8 2 2-8c4-8 8-13 22-22z"/>
+          <path d="M28 14l6 6"/>
+          <path d="M8 41h16"/>
+        </svg>
+      </span>
+      <span><span class="dot">●</span> research &amp; writing</span>
+    </div>
     <div>
       <h2 class="entry-head">Write &amp; document it</h2>
       <ul class="entry-services">
@@ -372,7 +415,17 @@
   </section>
 
   <section class="entry" id="biz">
-    <div class="entry-tag"><span class="dot">●</span> business &amp; ops</div>
+    <div class="entry-tag">
+      <span class="entry-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="6" y="16" width="36" height="24" rx="3"/>
+          <path d="M17 16v-4a3 3 0 013-3h8a3 3 0 013 3v4"/>
+          <path d="M6 26h36"/>
+          <path d="M21 26v4h6v-4"/>
+        </svg>
+      </span>
+      <span><span class="dot">●</span> business &amp; ops</span>
+    </div>
     <div>
       <h2 class="entry-head">Run &amp; manage it</h2>
       <ul class="entry-services">
@@ -386,7 +439,15 @@
   </section>
 
   <section class="entry" id="make">
-    <div class="entry-tag"><span class="dot">●</span> design &amp; growth</div>
+    <div class="entry-tag">
+      <span class="entry-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="24" cy="24" r="17"/>
+          <path d="M30 18l-4 12-12 4 4-12z"/>
+        </svg>
+      </span>
+      <span><span class="dot">●</span> design &amp; growth</span>
+    </div>
     <div>
       <h2 class="entry-head">Design &amp; grow it</h2>
       <ul class="entry-services">
@@ -399,7 +460,21 @@
   </section>
 
   <section class="entry" id="lingua">
-    <div class="entry-tag"><span class="dot">●</span> language &amp; ai</div>
+    <div class="entry-tag">
+      <span class="entry-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="var(--coral)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="5" y="8" width="24" height="17" rx="3"/>
+          <path d="M11 30l0-5" />
+          <rect x="19" y="23" width="24" height="17" rx="3"/>
+          <path d="M37 40v5"/>
+          <path d="M11 13h12"/>
+          <path d="M15 13c0 5-2 8-6 9"/>
+          <path d="M25 28h12"/>
+          <path d="M29 28c0 5-2 8-6 9"/>
+        </svg>
+      </span>
+      <span><span class="dot">●</span> language &amp; ai</span>
+    </div>
     <div>
       <h2 class="entry-head">Translate &amp; train it</h2>
       <ul class="entry-services">
