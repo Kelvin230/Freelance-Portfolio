@@ -102,6 +102,39 @@
     margin:0 auto;
     position:relative;
   }
+  .hero-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1.8rem;
+    margin-bottom:1.6rem;
+  }
+  .hero-photo{
+    width:96px;
+    height:96px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2.5px solid var(--gold);
+    flex-shrink:0;
+    box-shadow: 0 0 0 5px rgba(201,152,43,0.12);
+  }
+  .hero-name{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(1.5rem, 4vw, 2rem);
+    color:var(--paper);
+    margin:0 0 0.3rem;
+  }
+  .hero-role{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.82rem;
+    color:rgba(243,239,230,0.6);
+    margin:0;
+  }
+  @media (max-width:560px){
+    .hero-top{gap:1.2rem;}
+    .hero-photo{width:72px; height:72px;}
+  }
   .eyebrow{
     font-family:'IBM Plex Mono', monospace;
     font-size:0.72rem;
@@ -363,11 +396,11 @@
     <div class="eyebrow">Freelance Directory</div>
       <div class="hero-top">
         <div>
-           <p class="hero-name">Kelvin Kiago</p>
-           <p class="hero-role">Freelance Solutions · Scientific Research · Data Analyst · EN-SW Translator</p>
+          <p class="hero-name">Kelvin Kiago</p>
+          <p class="hero-role">Freelance Solutions · Scientific Research · Data Analyst · EN-SW Translator</p>
         </div>
-      <img class="hero-photo" src="https://avatars.githubusercontent.com/u/45189057?v=4" alt="Kelvin Kiago">
-    </div>
+        <img class="hero-photo" src="https://avatars.githubusercontent.com/u/45189057?v=4" alt="Kelvin Kiago">
+      </div>
     <h1 class="headword">free·lanc·er <em>/ˈfriːˌlænsər/</em></h1>
     <p class="pronunciation"><span class="pos">noun.</span> one professional, multiple disciplines, zero limits.</p>
     <p class="definition">
